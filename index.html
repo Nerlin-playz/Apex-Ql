@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Quantum Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Quantum Security Login Gateway -->
+    <div id="login-container" class="auth-card">
+        <div class="auth-header">
+            <h2>Apex Quantum Gateway</h2>
+            <div class="terminal-badge">SECURE PORT: 8443</div>
+        </div>
+        <p>Establish authenticated node link</p>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">Operator Identity</label>
+                <input type="text" id="username" required placeholder="user">
+            </div>
+            <div class="input-group">
+                <label for="password">Security Passkey</label>
+                <input type="password" id="password" required placeholder="1234">
+            </div>
+            
+            <!-- Biometric Verification Upgrade -->
+            <div class="biometric-zone" id="biometric-trigger">
+                <div class="fingerprint-icon">🔘</div>
+                <span>Simulate Biometric Scan</span>
+            </div>
+
+            <button type="submit" class="btn">Initialize Mainframe</button>
+            <p id="login-error" class="error-msg hidden">Access Denied: Signature Mismatch.</p>
+        </form>
+    </div>
+
+    <!-- Main Banking Workstation -->
+    <div id="dashboard-container" class="dashboard hidden">
+        <!-- Live Global HUD -->
+        <div class="hud-bar">
+            <div class="hud-item">SYS_STATUS: <span class="online-tag">ENCRYPTED LINK</span></div>
+            <div class="hud-item cursor-pointer" id="hud-timer-zone">SESSION: <span id="hud-timer">10:00</span> <span class="extend-tag">(EXTEND)</span></div>
+            <div class="hud-item">RISK STATE: <span id="hud-alerts" class="badge zero">NOMINAL</span></div>
+            <div class="hud-item hidden-mobile" id="hud-clock">00:00:00 AM</div>
+        </div>
+
+        <header>
+            <div class="brand">
+                <h1>Apex Quantum Ledger</h1>
+                <span class="user-badge">Clearance Level: Tier-1 Operator</span>
+            </div>
+            <button id="logout-btn" class="btn-secondary">Sever Connection</button>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Asset & Quick Liquidity Panel -->
+            <section class="card balance-card">
+                <h3>Total Liquidity Valuation</h3>
+                <p class="balance">$<span id="balance-amount">0.00</span></p>
+                
+                <div class="quick-actions-grid">
+                    <button id="quick-deposit-100" class="btn-hud">+ $100</button>
+                    <button id="quick-deposit-500" class="btn-hud">+ $500</button>
+                    <button id="export-ledger-btn" class="btn-hud btn-accent">💾 Export Logs</button>
+                </div>
+            </section>
+
+            <!-- FX Asset Valuation HUD -->
+            <section class="card fx-card">
+                <h3>Global FX Arbitrage</h3>
+                <div class="fx-grid">
+                    <div class="fx-item"><span>EUR equivalent:</span> <strong id="fx-eur">€0.00</strong></div>
+                    <div class="fx-item"><span>GBP equivalent:</span> <strong id="fx-gbp">£0.00</strong></div>
+                    <div class="fx-item"><span>JPY equivalent:</span> <strong id="fx-jpy">¥0</strong></div>
+                </div>
+                <div class="hud-subtext" style="margin-top:12px;">Live simulated rate conversions updated in real-time.</div>
+            </section>
+
+            <!-- Fund Allocation Module -->
+            <section class="card transfer-card">
+                <h3>Execute Quantum Wire Routing</h3>
+                <form id="transfer-form">
+                    <div class="input-group">
+                        <label for="recipient">Target Node Routing Address</label>
+                        <input type="text" id="recipient" required placeholder="Routing ID or Name">
+                    </div>
+                    <div class="input-group">
+                        <label for="amount">Allocation Volume ($)</label>
+                        <input type="number" id="amount" min="1" step="0.01" required placeholder="0.00">
+                    </div>
+                    <button type="submit" class="btn">Deploy Capital</button>
+                    <p id="transfer-message" class="msg hidden"></p>
+                </form>
+            </section>
+
+            <!-- Advanced Filterable Ledger Logs -->
+            <section class="card history-card">
+                <div class="ledger-header">
+                    <h3>Historical Node Logs</h3>
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">ALL</button>
+                        <button class="filter-btn" data-filter="credit">IN</button>
+                        <button class="filter-btn" data-filter="debit">OUT</button>
+                    </div>
+                </div>
+                <div class="ledger-wrapper">
+                    <ul id="transaction-list"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
